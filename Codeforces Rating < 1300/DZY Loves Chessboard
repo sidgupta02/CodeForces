@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+ 
+int main(){
+    int n,m;
+    cin>>n>>m;
+    vector<vector<char>> v(n,vector<char>(m));
+    for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+            char k;
+            cin>>k;
+            v[i][j]=k;
+        }
+    }
+    char c1='B', c2='W';
+    for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+            if(v[i][j]=='-') cout<<'-';
+            else{
+                if(!(i&1) && !(j&1)) cout<<c1;
+                else if(!(i&1) && (j&1)) cout<<c2;
+                else if((i&1) && (j&1)) cout<<c1;
+                else cout<<c2;
+            }
+        }
+        cout<<endl;
+    }
+    return 0;
+}
