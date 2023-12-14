@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    int n, t;
+    cin >> n >> t;
+    string queue;
+    cin >> queue;
+
+    for (int sec = 0; sec < t; sec++) {
+        int i = 0;
+        while (i < n - 1) {
+            if (queue[i] == 'B' && queue[i + 1] == 'G') {
+                swap(queue[i], queue[i + 1]);
+                i += 2; // Skip the next position as it's already swapped
+            } else {
+                i += 1;
+            }
+        }
+    }
+
+    cout << queue << endl;
+    return 0;
+}
